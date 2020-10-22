@@ -2,7 +2,7 @@
 * Project topic: Cryptocurrency prediction
 # Team Members:
 * Winnie Yim
-* Steve Wen Lin
+* Wen Lin
 * Ryan Shahid
 * Phu Phan
 # Hypothesis:
