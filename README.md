@@ -1,8 +1,8 @@
 # Final-project-G3:
-* Project topic: Cryptocurrency prediction
+* Project topic: Prediction of Cryptocurrency - Bitcoin
 # Team Members:
 * Winnie Yim
-* Wen Lin
+* Steve Wen Lin
 * Ryan Shahid
 * Phu Phan
 # Hypothesis:
