@@ -1,2 +1,3 @@
-sh
+```sh
 web: gunicorn app:app
+```
