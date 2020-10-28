@@ -8,12 +8,12 @@ def home():
     return render_template("index.html")
 
 @app.route("/bar.html") 
-def inspiration():
+def bar():
 
     return render_template("bar.html")
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run()
 
 
 
