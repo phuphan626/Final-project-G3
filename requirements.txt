@@ -7,9 +7,5 @@ pylint==2.5.2
 six==1.15.0
 toml==0.10.1
 wrapt==1.12.1
-<<<<<<< HEAD:HTML/requirements.txt
 Flask==1.1.1
 gunicorn
-=======
-gunicorn 
->>>>>>> 4a75e0d0105a237609dc237e344f367ead0b2b9b:requirements.txt
