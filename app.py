@@ -18,6 +18,16 @@ def bar():
 
     return render_template("bar.html")
 
+@app.route("/gantt.html") 
+def gantt():
+
+    return render_template("gantt.html")
+
+@app.route("/radial.html") 
+def radial():
+
+    return render_template("radial.html")    
+
 
 @app.route("/scrape") 
 def scrape():
