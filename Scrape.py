@@ -61,13 +61,7 @@ def scrapping():
    # Make a dictionary of prediction, data array and other stuff. Or jsonify it
    data_dict=dict(date=date_usdi,Linear_predicted_price=unscaled_pred[0][0],Logistic_predicted_movement=prediction[0])
    return data_dict
-#     date=[]
-#     sp500=[]
-#     nasdaq=[]
-#     dow=[]
-#     usid=[]
-#     gold=[]
-#     unemployment_per=[]
+
 
 
 
