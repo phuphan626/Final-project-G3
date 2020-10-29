@@ -8,4 +8,7 @@ six==1.15.0
 toml==0.10.1
 wrapt==1.12.1
 Flask==1.1.1
+requests==2.22.0
+json5==0.9.1
+joblib==0.14.1
 gunicorn
