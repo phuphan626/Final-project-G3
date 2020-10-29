@@ -1,6 +1,7 @@
 import requests 
 import bs4 
 import joblib
+import json
 def scrapping():
    r = requests.get('https://finance.yahoo.com/quote/%5EDJI/history?p=%5EDJI') #DOW JONES 
    soup = bs4.BeautifulSoup(r.text, "lxml") #convert to beautifulsoup element 
@@ -38,16 +39,35 @@ def scrapping():
 
    unemployment = soup6.find('span', {'class':'series-meta-observation-value'}).text #latest adjust close
 
-   data_array = [ unemployment, close_usdi, close_dow, close_nasdaq, close_500, close_gold ]
+   linear_array = [ close_usdi,close_gold,close_500,close_nasdaq ]
+   logistic_array=[unemployment,close_nasdaq,close_500,close_gold]
 
    # array_data={'Unemployment':unemployment,'Close_USDI':close_usdi,'Close_dow':close_dow,'Close_nasdaq':close_nasdaq,'Close_500':close_500,'Close_gold':close_gold}
-
-   for x in range(0,len(data_array)):
-        data_array[x]=float(data_array[x])
-   linear_model=joblib.load('Linear_model.sav')
-   
-   prediction=linear_model.predict([data_array])
-   return prediction
+   # change data type to float
+   for x in range(0,len(linear_array)):
+        linear_array[x]=float(linear_array[x])
+   for y in range(0,len(logistic_array)):
+        logistic_array[y]=float(logistic_array[y])
+   # Load in Linear_model 
+   linear_model=joblib.load(open('Linear_model2.sav', 'rb'))
+   x_scaler=joblib.load(open('x_linear_scaler.sav','rb'))
+   y_scaler=joblib.load(open('y_linear_scaler.sav','rb'))
+   scaled_data=x_scaler.transform([linear_array])
+   prediction=linear_model.predict(scaled_data)
+   unscaled_pred=y_scaler.inverse_transform(prediction)
+   # Load in Logistic_model
+   logistic_model=joblib.load(open('Logistic_model2.sav','rb'))
+   prediction=logistic_model.predict([logistic_array])
+   # Make a dictionary of prediction, data array and other stuff. Or jsonify it
+   data_dict=dict(date=date_usdi,Linear_predicted_price=unscaled_pred[0][0],Logistic_predicted_movement=prediction[0])
+   return data_dict
+#     date=[]
+#     sp500=[]
+#     nasdaq=[]
+#     dow=[]
+#     usid=[]
+#     gold=[]
+#     unemployment_per=[]
 
 
 
