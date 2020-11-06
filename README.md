@@ -1,6 +1,6 @@
 # Final-project-G3:
 * Project topic: Prediction of Cryptocurrency - Bitcoin
-https://bitcoinfinalproject.herokuapp.com/
+* https://bitcoinfinalproject.herokuapp.com/
 # Team Members:
 * Winnie Yim
 * Steve Wen Lin
